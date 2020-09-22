@@ -1,0 +1,108 @@
+$font-stack: 'Nunito Sans', Helvetica, Arial, sans-serif;
+$comp-color: rgb(255, 0, 0);
+$primary-color: rgb(40, 40, 40);
+$second-color: rgb(255, 246, 117);
+$third-color: rgb(98, 24, 137);
+$light: lighten($comp-color, 30);
+$dark: lighten($third-color, 20);
+
+
+%links {
+    text-decoration: none;
+    color: $second-color;
+    font-weight: 700;
+}
+@mixin tablet {
+    @media only screen and (max-width: 800px) { @content; }
+}
+@mixin phone {
+    @media only screen and (max-width: 600px) { @content; }
+}
+@mixin miniPhones {
+    @media only screen and (max-width: 400px) { @content; }
+}
+
+@mixin set-font-color($mobile: true) {
+    @if($mobile) {
+        color: $comp-color;
+    } @else {
+        background-color: $comp-color;
+        color: $third-color;
+    }
+}
+
+
+body {
+    background-color: #fff;
+    color: $primary-color;
+    font-family: $font-stack;
+    position: relative;
+    min-height: 100vh;
+}
+@include miniPhones {
+    body {
+        background-color: $second-color;
+    }
+}
+h1, h3 {
+    color: $primary-color;
+}
+.red {
+    color: $light;
+}
+.red:hover {
+    color: $dark;
+}
+.gridContainer {
+    margin-left: 0;
+    grid-template-columns: 6.5% 6.5% 6.5% 6.5% 6.5% 6.5% 6.5% 6.5% 6.5% 6.5% 6.5% 6.5%;
+    column-gap: 2%;
+    display: grid;
+}
+.container section {
+    grid-column: 1 / 10;   
+}
+@include tablet {
+    .container section {
+        grid-column: 1 / 13;
+    }
+}
+.left {
+    grid-column: 1 / 5;
+}
+@include tablet {
+    .left {
+        grid-column: 1 / 5;
+    }
+}
+@include phone {
+    .left {
+        grid-column: 1 / 13;
+    }
+}
+.right {
+    grid-column: 5 / 13;
+}
+@include tablet {
+    .right {
+        grid-column: 5 / 13;
+    }
+}
+@include phone {
+    .right {
+        grid-column: 1 / 13;
+    }
+}
+.sidbar {
+    grid-column: 10 / 13;
+    margin-top: 3em;
+    padding: 1em;
+    background-color: $second-color;
+    display: inline-block;
+    overflow: hidden;
+}
+@include tablet {
+    .sidbar {
+        display: none;
+    }
+}

@@ -3,14 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moment 2</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Moment 3</title>
+    <link rel="stylesheet" href="sass/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <div class="content">
-        <h1>MOMEMT 2:</h1>
-        <h3>First time using gulp</h3>
-    </div>
+    <div class="page-container">
+        <header>
+            <div id="logo"><a href=""> women web developers <span class="red">:</span> </a></div>
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="#">members</a></li>
+                        <li><a href="#">work</a></li>
+                        <li><a href="#">history</a></li>
+                        <li><a href="#">about</a></li>
+                        <li><a href="#">contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Small screen MENU -->
+            <div id="smallNav">
+                <div id="mySidebar" class="sidebar">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="#">members</a>
+                    <a href="#">work</a>
+                    <a href="#">history</a>
+                    <a href="#">about</a>
+                    <a href="#">contact</a>
+                </div>
+                <div id="mobMenuButton">
+                    <button class="openbtn" onclick="openNav()"> &#9776; </button>
+                </div>
+            </div>
+        </header>
+        <div class="container gridContainer">
+
+            <section class="gridContainer">
+                <div class="left">
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="images/rabbit_small.jpg">
+                        <source media="(min-width: 601px)" srcset="images/rabbit.jpg">
+                        <img src="images/rabbit.jpg" alt="face with rabbit mask">
+                    </picture>
+                </div>
+                <div class="right">
+                    <div class="names">Elin Kurtsdotter <span class="city">(Malmö)</span></div>
+                    <h3>Web developer who started her carreer as a photographer, thereafter she worked as a graphic designer 
+                        for half a decade. Since 2019 she is studying web development at Mid Sweden University. <span><a href="#" class="red"> More</a></span></h3>
+                </div>
+            </section>
+
+            <!-- sidbar -->
+            <article class="sidbar">
+                <div class="extras">
+                    <h3>Workshops<span class="red"> :</span></h3>
+                    <img src="images/P1130226.jpg" alt="oak tree">
+                    <p>Join our developers on a weekend with coding and lots of more fun. <span class="red">Read more!</span></p>
+                </div>
+            </article>
+            <!-- end sidbar -->
+
+            <section class="gridContainer">
+                <div class="left">
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="images/clown_small.jpg">
+                        <source media="(min-width: 601px)" srcset="images/clown.jpg">
+                        <img src="images/clown.jpg" alt="clown">
+                    </picture>
+                </div>
+                <div class="right">
+                    <div class="names">Amaia Arrazola <span class="city">(Sundsvall)</span></div>
+                    <h3>Web developer who started her carreer as a photographer, thereafter she worked as a graphic designer 
+                        for half a decade. Since 2019 she is studying web development at Mid Sweden University. <span><a href="#" class="red"> More</a></h3>
+                </div>
+            </section>
+ 
+
+        </div><!-- end container -->
+
+        <div class="spacer"></div>
+
+        <footer>
+            <p>info@womenwebdevelopers.com</p>
+        </footer>
+        
+    </div><!-- end page-container -->
     <script src="js/main.js"></script>
 </body>
 </html>

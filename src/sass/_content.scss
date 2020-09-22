@@ -1,0 +1,74 @@
+
+.container {
+    width: 90%;
+    max-width: 1220px;
+    margin: 0 auto;
+}
+section {
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.names {
+    @include set-font-color ($mobile:true);
+    font-size: 3em;
+    font-weight: 700;
+    line-height: 0.6em;
+    margin-top: 0.5em;
+    margin-bottom: 0.3em;
+}
+
+@include tablet {
+    .names {
+        font-size: 2em;
+        @include set-font-color ($mobile:false);
+    }
+}
+.city {
+    font-size: 0.5em;
+    font-weight: 400;
+}
+@include tablet {
+    .right h3 {
+        font-size: 1em;
+    }
+}
+.extras {
+    p {
+        margin-top: 1em;
+    }
+}
+.spacer {
+    height: 6em;
+}
+footer {
+    position: absolute;
+    height: 2.5em;
+    bottom: 0;
+    width: 100%;
+    
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: $third-color;
+
+    p {
+        margin-right: 1.5em;
+        text-align: right;
+        @extend %links;
+    }
+    p:hover {
+        color: $dark;
+    }
+}
+@include tablet {
+    footer {
+        text-align: center;
+    }
+}
+
+/* LARGE SCREENS hide mobMENU */
+@media only screen and (min-width: 801px) {
+    #smallNav {
+        display: none;
+    }
+}

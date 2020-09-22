@@ -1,17 +1,22 @@
 const { src, dest, watch, series, parallel } = require("gulp");
 const concat = require("gulp-concat");
 const uglify = require("gulp-uglify-es").default;
-const cleanCSS = require("gulp-clean-css");
+//const cleanCSS = require("gulp-clean-css");
 const browsersync = require("browser-sync").create();
 const imagemin = require("gulp-imagemin");
 const sourcemaps = require("gulp-sourcemaps");
+const sass = require("gulp-sass");
+const autoprefixer = require("gulp-autoprefixer");
+
+sass.compiler = require('node-sass');
 
 //search paths
 const files = {
     htmlPath: "src/**/*.html",
     cssPath: "src/**/*.css",
     jsPath: "src/**/*.js",
-    imgPath: "src/images/*"
+    imgPath: "src/images/*",
+    sassPath: "src/sass/*.scss"
 }
 
 //TASKS
@@ -34,6 +39,7 @@ function jsTask() {
 }
 
 //concat, minify and copy css-files
+/* Not neccesary when using scss
 function cssTask() {
     return src(files.cssPath)
         .pipe(sourcemaps.init())
@@ -41,6 +47,18 @@ function cssTask() {
         .pipe(cleanCSS())
         .pipe(sourcemaps.write())
         .pipe(dest('pub/css')
+    );
+}
+*/
+
+// concat, minify and copy sass-files
+function sassTask() {
+    return src(files.sassPath)
+        .pipe(sourcemaps.init())
+        .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+        .pipe(autoprefixer({ cascade: false }))
+        .pipe(sourcemaps.write("./maps"))
+        .pipe(dest("pub/sass")
     );
 }
 
@@ -71,16 +89,16 @@ function somethingHappend() {
     });
     
     //Watching for changes
-    watch([files.htmlPath, files.jsPath, files.cssPath, files.imgPath], 
-        parallel(copyHTML, jsTask, cssTask, imgTask));
+    watch([files.htmlPath, files.jsPath, files.sassPath, files.imgPath], 
+        parallel(copyHTML, jsTask, sassTask, imgTask));
 
-    watch(['pub/js', 'pub/css', 'pub', 'pub/images']).on('change', browsersync.reload);
+    watch(['pub/js', 'pub', 'pub/images', 'pub/sass']).on('change', browsersync.reload);
 
 }
 
 
 //default TASKS
 exports.default = series(
-    parallel(copyHTML, jsTask, cssTask, imgTask),
+    parallel(copyHTML, jsTask, sassTask, imgTask),
     somethingHappend
 );
