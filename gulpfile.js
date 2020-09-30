@@ -7,6 +7,7 @@ const imagemin = require("gulp-imagemin");
 const sourcemaps = require("gulp-sourcemaps");
 const sass = require("gulp-sass");
 const autoprefixer = require("gulp-autoprefixer");
+const babel = require("gulp-babel");
 
 sass.compiler = require('node-sass');
 
@@ -31,9 +32,10 @@ function copyHTML() {
 function jsTask() {
     return src(files.jsPath)
         .pipe(sourcemaps.init())
+        .pipe(babel())
         .pipe(concat('main.js'))
         .pipe(uglify())
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write("."))
         .pipe(dest('pub/js')
     );
 }
