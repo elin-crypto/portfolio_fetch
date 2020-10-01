@@ -34,7 +34,7 @@ function jsTask() {
         .pipe(sourcemaps.init())
         .pipe(babel())
         .pipe(concat('main.js'))
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(sourcemaps.write("."))
         .pipe(dest('pub/js')
     );
