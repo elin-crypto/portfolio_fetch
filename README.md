@@ -1,10 +1,8 @@
 # Moment 5.2: Skapa fetch API till REST-webbtjänst
 
+FetchApi som anropar webbtjänst skapad med php. 
 
-# Moment 4 : ECMAScript 
-Uppdatera gulp för bakåtkompabilitet från ES6.
+API: http://studenter.miun.se/~elku1901/dt173g/Moment5/rest/courses.php
 
-# Moment 3 : SASS
-
-Denna uppgift går ut på att vidareutveckla förra uppgiften (gulp) och konvertera sass-filer till css med hjälp av gulp. 
+För tillfället funkar inte uppdatera-funktionen. 
 
