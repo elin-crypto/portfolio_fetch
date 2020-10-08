@@ -1,4 +1,4 @@
-# Moment 5: Skapa REST-webbtjänst
+# Moment 5.2: Skapa fetch API till REST-webbtjänst
 
 
 # Moment 4 : ECMAScript 

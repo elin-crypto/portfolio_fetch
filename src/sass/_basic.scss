@@ -13,7 +13,7 @@ $dark: lighten($third-color, 20);
     font-weight: 700;
 }
 @mixin tablet {
-    @media only screen and (max-width: 800px) { @content; }
+    @media only screen and (max-width: 900px) { @content; }
 }
 @mixin phone {
     @media only screen and (max-width: 600px) { @content; }
@@ -59,6 +59,7 @@ h1, h3 {
     column-gap: 2%;
     display: grid;
 }
+/*
 .container section {
     grid-column: 1 / 10;   
 }
@@ -67,25 +68,18 @@ h1, h3 {
         grid-column: 1 / 13;
     }
 }
-.left {
-    grid-column: 1 / 5;
-}
-@include tablet {
-    .left {
-        grid-column: 1 / 5;
-    }
-}
+
 @include phone {
     .left {
         grid-column: 1 / 13;
     }
-}
+}*/
 .right {
-    grid-column: 5 / 13;
+    grid-column: 1 / 8;
 }
 @include tablet {
     .right {
-        grid-column: 5 / 13;
+        grid-column: 3 / 11;
     }
 }
 @include phone {
@@ -94,8 +88,8 @@ h1, h3 {
     }
 }
 .sidbar {
-    grid-column: 10 / 13;
-    margin-top: 3em;
+    grid-column: 9 / 13;
+    margin-top: 6em;
     padding: 1em;
     background-color: $second-color;
     display: inline-block;
@@ -103,6 +97,18 @@ h1, h3 {
 }
 @include tablet {
     .sidbar {
-        display: none;
+        grid-column: 3 / 11;
+        margin-top: 0;
     }
+}
+.btn {
+    border-radius: 2px;
+    border: none;
+    background-color: $light;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 0.3em 0.5em;
+    text-align: 0.7em;
+    font-weight: 700;
+    cursor: pointer;
 }

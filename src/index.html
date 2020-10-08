@@ -11,74 +11,74 @@
 <body>
     <div class="page-container">
         <header>
-            <div id="logo"><a href=""> women web developers <span class="red">:</span> </a></div>
-                <nav id="mainNav">
-                    <ul>
-                        <li><a href="#">members</a></li>
-                        <li><a href="#">work</a></li>
-                        <li><a href="#">history</a></li>
-                        <li><a href="#">about</a></li>
-                        <li><a href="#">contact</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <div id="logo"><a href=""> elin kurtsdotter  <span class="red">cv :</span> </a></div>
 
-            <!-- Small screen MENU -->
-            <div id="smallNav">
-                <div id="mySidebar" class="sidebar">
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <a href="#">members</a>
-                    <a href="#">work</a>
-                    <a href="#">history</a>
-                    <a href="#">about</a>
-                    <a href="#">contact</a>
-                </div>
-                <div id="mobMenuButton">
-                    <button class="openbtn" onclick="openNav()"> &#9776; </button>
-                </div>
-            </div>
+          
         </header>
         <div class="container gridContainer">
 
-            <section class="gridContainer">
-                <div class="left">
-                    <picture>
-                        <source media="(max-width: 600px)" srcset="images/rabbit_small.jpg">
-                        <source media="(min-width: 601px)" srcset="images/rabbit.jpg">
-                        <img src="images/rabbit.jpg" alt="face with rabbit mask">
-                    </picture>
-                </div>
-                <div class="right">
-                    <div class="names">Elin Kurtsdotter <span class="city">(Malmö)</span></div>
-                    <h3>Web developer who started her carreer as a photographer, thereafter she worked as a graphic designer 
-                        for half a decade. Since 2019 she is studying web development at Mid Sweden University. <span><a href="#" class="red"> More</a></span></h3>
-                </div>
-            </section>
+            
+                <section class="right">
+                    <!-- Update course form -->
+                    <div id="updateCourse"></div>
 
-            <!-- sidbar -->
+                    <h1>kurser jag läst<span class="red"> :</span></h1>
+                    <!-- Kurslista -->
+                    <table class="table">
+                        <thead>
+                            <td>Kurskod</td>
+                            <td>Namn</td>
+                            <td>Progression</td>
+                        </thead>
+                        <!-- insert courses from api -->
+                        <tbody id="courses"></tbody>
+                    </table>
+                    
+                </section>
+                            <!-- sidbar -->
+            
             <article class="sidbar">
                 <div class="extras">
-                    <h3>Workshops<span class="red"> :</span></h3>
+                    <h3>Lägg till ny kurs</h3>
+                    <form action="post" id="addCourseForm">
+                        <label for="code">Kurskod</label>
+                        <br>
+                        <input type="text" name="code" id="code">
+                        <br>
+                        <label for="name">Kursnamn</label>
+                        <br>
+                        <input type="text" name="name" id="name">
+                        <br>
+                        <label for="progression">Progression</label>
+                        <br>
+                        <input type="text" name="progression" id="progression">
+                        <br>
+                        <label for="syllabus">Länk till kursplan</label>
+                        <br>
+                        <input type="text" name="syllabus" id="syllabus">
+                        <br>
+                        <input value="Lägg till kurs" id="addCourse" class="btn">
+                    </form>
+                    
+                    <h3>Intressen och annat<span class="red"> :</span></h3>
                     <img src="images/P1130226.jpg" alt="oak tree">
-                    <p>Join our developers on a weekend with coding and lots of more fun. <span class="red">Read more!</span></p>
+                    <ul>
+                        <li>Jag gillar att vara i naturen, klättra och vandra. </li>
+                        <li>Jag har B-körkort</li>
+                        <li>Jag pratar utöver mitt modersmål svenska, engelska, spanska, portugisiska och franska.</li>
+                    </ul>
                 </div>
             </article>
             <!-- end sidbar -->
-
-            <section class="gridContainer">
-                <div class="left">
-                    <picture>
-                        <source media="(max-width: 600px)" srcset="images/clown_small.jpg">
-                        <source media="(min-width: 601px)" srcset="images/clown.jpg">
-                        <img src="images/clown.jpg" alt="clown">
-                    </picture>
-                </div>
+                
                 <div class="right">
-                    <div class="names">Amaia Arrazola <span class="city">(Sundsvall)</span></div>
-                    <h3>Web developer who started her carreer as a photographer, thereafter she worked as a graphic designer 
-                        for half a decade. Since 2019 she is studying web development at Mid Sweden University. <span><a href="#" class="red"> More</a></h3>
+
                 </div>
-            </section>
+            
+
+
+
+
  
 
         </div><!-- end container -->
@@ -86,7 +86,7 @@
         <div class="spacer"></div>
 
         <footer>
-            <p>info@womenwebdevelopers.com</p>
+            <p>foto@elinkurtsdotter.com</p>
         </footer>
         
     </div><!-- end page-container -->
