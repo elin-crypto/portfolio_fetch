@@ -1,16 +1,21 @@
 $font-stack: 'Nunito Sans', Helvetica, Arial, sans-serif;
-$comp-color: rgb(255, 0, 0);
-$primary-color: rgb(40, 40, 40);
-$second-color: rgb(255, 246, 117);
-$third-color: rgb(98, 24, 137);
-$light: lighten($comp-color, 30);
+$main-color:rgb(94, 79, 72);
+$second-color: rgb(195, 5, 128);
+$third-color: rgb(166, 115, 115);
+$light: lighten($main-color, 30);
 $dark: lighten($third-color, 20);
 
 
 %links {
     text-decoration: none;
-    color: $second-color;
+    color: $light;
     font-weight: 700;
+}
+%grid12columns {
+    margin-left: 0;
+    grid-template-columns: 6% 6% 6% 6% 6% 6% 6% 6% 6% 6% 6% 6%;
+    column-gap: 2.64%;
+    display: grid;
 }
 @mixin tablet {
     @media only screen and (max-width: 900px) { @content; }
@@ -24,17 +29,17 @@ $dark: lighten($third-color, 20);
 
 @mixin set-font-color($mobile: true) {
     @if($mobile) {
-        color: $comp-color;
+        color: $main-color;
     } @else {
-        background-color: $comp-color;
+        background-color: $main-color;
         color: $third-color;
     }
 }
 
 
 body {
-    background-color: #fff;
-    color: $primary-color;
+    background-color:	#FFFAFA; /* snow */
+    color: $main-color;
     font-family: $font-stack;
     position: relative;
     min-height: 100vh;
@@ -45,7 +50,7 @@ body {
     }
 }
 h1, h3 {
-    color: $primary-color;
+    color: $main-color;
 }
 .red {
     color: $light;
@@ -54,10 +59,7 @@ h1, h3 {
     color: $dark;
 }
 .gridContainer {
-    margin-left: 0;
-    grid-template-columns: 6.5% 6.5% 6.5% 6.5% 6.5% 6.5% 6.5% 6.5% 6.5% 6.5% 6.5% 6.5%;
-    column-gap: 2%;
-    display: grid;
+    @extend %grid12columns;
 }
 /*
 .container section {
@@ -74,8 +76,16 @@ h1, h3 {
         grid-column: 1 / 13;
     }
 }*/
+#websites {
+    grid-column: 1 / 13;
+    @extend %grid12columns;
+}
+.left {
+    grid-column: 1 / 7;
+    margin-top: 3em;
+}
 .right {
-    grid-column: 1 / 8;
+    grid-column: 7 / 13;
 }
 @include tablet {
     .right {
@@ -87,19 +97,29 @@ h1, h3 {
         grid-column: 1 / 13;
     }
 }
-.sidbar {
-    grid-column: 9 / 13;
-    margin-top: 6em;
-    padding: 1em;
-    background-color: $second-color;
-    display: inline-block;
-    overflow: hidden;
-}
-@include tablet {
-    .sidbar {
-        grid-column: 3 / 11;
-        margin-top: 0;
+.column {
+    margin-bottom: 2em;
+    h4 {
+        margin-top: 0.5em;
+        font-size: 1.2em;
+        font-style: italic;
     }
+    h4:hover {
+        color: $main-color;
+    }
+}
+.column:hover {
+    color: $second-color;
+}
+
+.first {
+    grid-column: 1 / 5;
+}
+.second {
+    grid-column: 5 / 9;
+}
+.third {
+    grid-column: 9 / 13;
 }
 .btn {
     border-radius: 2px;
@@ -111,4 +131,7 @@ h1, h3 {
     text-align: 0.7em;
     font-weight: 700;
     cursor: pointer;
+}
+.hidden {
+    display: none;
 }
