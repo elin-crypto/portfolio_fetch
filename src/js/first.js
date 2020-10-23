@@ -41,7 +41,7 @@ window.addEventListener('load', getWebsite);
 function getCourses() {
   educationEl.innerHTML = '';
 
-  fetch('http://localhost:8080/Webbutv_III_PROJEKT/API/education.php')
+  fetch('http://studenter.miun.se/~elku1901/dt173g/Projekt/portfolioAdmin/API/education.php')
     .then(respones => respones.json())
     .then(data => {
       data.forEach(education => {
@@ -64,7 +64,7 @@ function getCourses() {
 function getWork() {
   workEl.innerHTML = '';
 
-  fetch('http://localhost:8080/Webbutv_III_PROJEKT/API/work.php')
+  fetch('http://studenter.miun.se/~elku1901/dt173g/Projekt/portfolioAdmin/API/work.php')
   .then(respones => respones.json())
   .then(data => {
     data.forEach(work => {
@@ -80,9 +80,6 @@ function getWork() {
 }
 
 
-
- 
-
 /********************************
  *  WEBSITE
 *********************************/
@@ -93,35 +90,35 @@ function getWebsite() {
   let grids = 3; // grids per row
 
 
-  fetch('http://localhost:8080/Webbutv_III_PROJEKT/API/websites.php')
+  fetch('http://studenter.miun.se/~elku1901/dt173g/Projekt/portfolioAdmin/API/websites.php')
     .then(respones => respones.json())
     .then(data => {
       data.forEach(websites => {
         if(counter % grids == 1) {
         websitesEl.innerHTML +=
         `<div class="first column" id="${websites.id}" onClick="reply_click(${websites.id})">
-          <img src="images/${websites.ws_image}" alt="${websites.ws_image}">
+          <!--<img src="images/${websites.ws_image}" alt="${websites.ws_image}">-->
           <h4> ${websites.ws_title}</h4>
-          <p class="kursiv">${websites.ws_url}</p>
           <p > ${websites.ws_description} </p>
+          <p class="kursiv"><a href="${websites.ws_url}" target="_blank">Besök webbplatsen</a></p>
         </div>`     
           counter++;
         } else if(counter % grids == 2) {
           websitesEl.innerHTML +=
           `<div class="second column" id="${websites.id}" onClick="reply_click(${websites.id})">
-              <img src="images/${websites.ws_image}" alt="${websites.ws_image}">
+              <!--<img src="images/${websites.ws_image}" alt="${websites.ws_image}">-->
                 <h4> ${websites.ws_title}</h4>
-                <p class="kursiv">${websites.ws_url}</p>
-                <p class="hidden""> ${websites.ws_description} </p>
+                <p > ${websites.ws_description} </p>
+                <p class="kursiv"><a href="${websites.ws_url}" target="_blank">Besök webbplatsen</a></p>
           </div>`  
           counter++;
         } else {
           websitesEl.innerHTML +=
           `<div class="third column" id="${websites.id}" onClick="reply_click(${websites.id})">
-            <img src="images/${websites.ws_image}" alt="${websites.ws_image}">
-            <h4> ${websites.ws_title}</h4>
-            <p class="kursiv">${websites.ws_url}</p>
-            <p class="hidden""> ${websites.ws_description} </p>
+                <!--<img src="images/${websites.ws_image}" alt="${websites.ws_image}">-->
+                <h4> ${websites.ws_title}</h4>
+                <p> ${websites.ws_description} </p>
+                <p class="kursiv"><a href="${websites.ws_url}" target="_blank">Besök webbplatsen</a></p>
           </div>`  
           counter++;
         }

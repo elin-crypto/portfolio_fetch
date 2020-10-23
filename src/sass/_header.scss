@@ -4,7 +4,7 @@ header {
     height: 4em;
     width: 100%;
     position: fixed;
-    background-color: #FFFAFA;
+    background-color: $background-color;
 }
 @include miniPhones {
     header {
@@ -15,8 +15,10 @@ header {
     a {
         margin-top: 0em;
         left: 1.5em;
-        font-size: 3em;
+        font-size: 3.5em;
+        line-height: 1.3em;
         color: $main-color;
+        letter-spacing: -2px;
         font-family: 'Caveat', cursive;
         position: absolute;
     }
@@ -46,9 +48,9 @@ header {
                 display: block;
                 padding: 6px 7px;
                 @extend %links;
-                .active {
-                    color: $main-color;
-                }
+            }
+            #active {
+                color: $main-color;
             }
             a:hover {
                 color: $main-color;
@@ -56,12 +58,13 @@ header {
             }
     }
 }
-
+/*
+// Hide menu
 @include tablet {
     #mainNav {
         display: none;
     }
-}
+}*/
 
 
 /* THE MOBILE MENU */
