@@ -12,12 +12,13 @@
 <body>
     <div class="page-container">
         <header>
-            <div id="logo"><a href="index.html"> elink </a></div>
+            <div id="logo"><a href="index.html"> <img src="images/elink_logo.svg" alt="elink" 
+                onmouseover="rollover(this)" onmouseout="mouseaway(this)"> </a></div>
 
           <nav id="mainNav">
               <ul>
                   <li><a href="index.html">Portfolio</a></li>
-                  <li><a href="about.html" id="active">About</a></li>
+                  <li><a href="about.html" id="active">Om</a></li>
                   <li><a href="https://www.instagram.com/elinku/" target="_blank"><i class="fa fa-instagram"></i></a></li>
               </ul>
           </nav>
@@ -28,23 +29,24 @@
             <!-- LEFT COLUMN-->
             <div class="left">
                 <img src="images/clown_small.jpg" alt="elin">
-                <section>
-                    <h2 class="title">ABOUT</h2>
-                    <p>I'm Elin Kurtsdotter, a Malmö based web developer, graphic designer and photographer.
-                        Currently I'm studying web development at Miduniversity.
+                <section class="about">
+                    <h2 class="title">OM</h2>
+                    <p>Elin Kurtsdotter är en Malmö-baserad grafisk designer och fotograf. För tillfället 
+                        studerar Elin Webbutveckling på Mittuniversitetet och tommer ta examen våren 2010.
                     </p>
+                    <p>Skicka ett <a href="mailto:foto@elinkurtsdotter.com">mejl</a> och säg hej!</p>
                 </section>
             </div>
             
             <!-- RIGHT COLUMN-->
             <div class="right">
                 <section class="cvArea">
-                    <h2 class="title">WORK EXPERIENCE</h2>
+                    <h2 class="title">ARBETSLIVSERFARENHET</h2>
                     <div id="work"></div>
                 </section>
 
                 <section class="cvArea">
-                    <h2 class="title">EDUCATION</h2>
+                    <h2 class="title">UTBLIDNING</h2>
                     <div id="education"></div>
                 </section>
             </div>
@@ -60,5 +62,6 @@
         
     </div><!-- end page-container -->
     <script src="js/main.js"></script>
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
 </body>
 </html>

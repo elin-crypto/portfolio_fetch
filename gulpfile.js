@@ -1,7 +1,6 @@
 const { src, dest, watch, series, parallel } = require("gulp");
 const concat = require("gulp-concat");
 const uglify = require("gulp-uglify-es").default;
-//const cleanCSS = require("gulp-clean-css");
 const browsersync = require("browser-sync").create();
 const imagemin = require("gulp-imagemin");
 const sourcemaps = require("gulp-sourcemaps");
@@ -14,7 +13,6 @@ sass.compiler = require('node-sass');
 //search paths
 const files = {
     htmlPath: "src/**/*.html",
-    cssPath: "src/**/*.css",
     jsPath: "src/**/*.js",
     imgPath: "src/images/*",
     sassPath: "src/sass/*.scss"
@@ -34,24 +32,11 @@ function jsTask() {
         .pipe(sourcemaps.init())
         .pipe(babel())
         .pipe(concat('main.js'))
-        //.pipe(uglify())
+        .pipe(uglify())  
         .pipe(sourcemaps.write("."))
         .pipe(dest('pub/js')
     );
 }
-
-//concat, minify and copy css-files
-/* Not neccesary when using scss
-function cssTask() {
-    return src(files.cssPath)
-        .pipe(sourcemaps.init())
-        .pipe(concat('styles.css'))
-        .pipe(cleanCSS())
-        .pipe(sourcemaps.write())
-        .pipe(dest('pub/css')
-    );
-}
-*/
 
 // concat, minify and copy sass-files
 function sassTask() {

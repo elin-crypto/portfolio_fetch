@@ -5,35 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elink Portfolio</title>
     <link rel="stylesheet" href="sass/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--FONTS-->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="page-container">
         <header>
-            <div id="logo"><a href="index.html"> elink </a></div>
+            <div id="logo"><a href="index.html"> <img src="images/elink_logo.svg" alt="elink" 
+                onmouseover="rollover(this)" onmouseout="mouseaway(this)"> </a></div>
 
           <nav id="mainNav">
               <ul>
                   <li><a href="index.html" id="active">Portfolio</a></li>
-                  <li><a href="about.html">About</a></li>
+                  <li><a href="about.html">Om</a></li>
                   <li><a href="https://www.instagram.com/elinku/" target="_blank"><i class="fa fa-instagram"></i></a></li>
               </ul>
           </nav>
         </header>
 
         <div class="container gridContainer">
-            <div class="presentation">
-                <h2>Hi! I'm Elin Kurtsdotter and I'm a web developer, graphic designer and photographer. 
-                    On this page I'm presenting some of my previous work. 
+            <div id="presentation">
+                <h2>Välkommen till Elin Kurtsdotters webbportfolio. Här presenteras några av 
+                    de webbplatser hon utvecklat under utbildningen på Mittuniversitetet.
                 </h2>
             </div>
 
-
-
-            <div id="websites"></div>
-
+            <div id="websites" class="flex-container" ></div>
+            <div id="caseDiv"></div>
         </div><!-- end container -->
 
         <div class="spacer"></div>
@@ -44,5 +44,6 @@
         
     </div><!-- end page-container -->
     <script src="js/main.js"></script>
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
 </body>
 </html>

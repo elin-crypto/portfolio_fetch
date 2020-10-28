@@ -3,12 +3,14 @@
     width: 90%;
     max-width: 1000px;
     margin: 4em auto;
-    .presentation {
+    #presentation {
         grid-column: 3 / 11;
-        margin-top: 3em;
-        margin-bottom: 8em;
         color: $main-color;
         font-style: italic;
+        h2 {
+            margin-top: 3em;
+            margin-bottom: 5em;
+        }
     }
 }
 section {
@@ -45,8 +47,27 @@ table td {
     text-align: left;
     border-bottom: .071428571em solid $third-color;
 }
-
-
+.about {
+    p {
+        margin-bottom: 1em;
+    }
+}
+div#caseDiv {
+    grid-column: 3 / 11;
+    margin-top: 4em;
+    height: 5em;
+    
+    h1 {
+        font-size: 4em;
+        color: #000;
+    }
+    
+}
+@include phone {
+    div#caseDiv {
+        grid-column: 1 / 13;
+    }
+}
 
 .names {
     @include set-font-color ($mobile:true);
@@ -80,6 +101,25 @@ table td {
 .spacer {
     height: 6em;
 }
+.visitLink {
+    a {
+        color: $light;
+    }
+    a:hover  {
+        color: $second-color;
+    }
+}
+.softLink { 
+    margin-top: 4em;
+    a {
+        color: $light;
+    }
+    a:hover {
+        color: $main-color;
+    }
+}
+
+
 footer {
     position: absolute;
     height: 2.5em;
