@@ -1,21 +1,19 @@
-# Project: Porfolio med fetch
-
+# Project: Webbportfolio med fetch API
 
 
 FetchApi som anropar webbtjänst skapad med php. 
 
 - Anrop sker till API:t med fetch-metoden. 
-- Data från databasen hämtas med en sql-fråga och läses ut i en tabell
-- Varje rad har en uppdatera (funkar inte) och delete-knapp
-- Vid klick på x (delete) skickas id med till radera-metoden som skickar en sql-fråga till databasen och där tar bort all info
-- Vill man lägga till kurser gör man det via formuläret som först kontrollerar att namn är ifyllt och rensar bort eventuella taggar. Därefter skickas sql-fråga och databasen uppdateras
+- Data från databasen hämtas med en sql-fråga och läses ut 
+
+- Vill man lägga till, uppdatera eller ta bort får man besöka admin-sidan:
+http://studenter.miun.se/~elku1901/dt173g/Projekt/portfolioPrivate/
 
 
 API: 
-http://studenter.miun.se/~elku1901/dt173g/Moment5/rest/courses.php
+http://studenter.miun.se/~elku1901/writeable/projektAdmin/API/
 
 Webbsida: 
-http://studenter.miun.se/~elku1901/dt173g/Moment5/fetchAPI/pub/
+http://studenter.miun.se/~elku1901/dt173g/Projekt/portfolioFetch/
 
 
-För tillfället funkar inte uppdatera-funktionen. 
