@@ -1,10 +1,12 @@
 
 
 
-
-function rollover(my_image) {
+// function that changes logo's color on mouseover 
+function rollover (my_image) {
     my_image.src = "images/elink_logo2.svg";
 }
-function mouseaway(my_image) {
+
+// and back to original color
+function mouseaway (my_image) {
     my_image.src = "images/elink_logo.svg";
 }
